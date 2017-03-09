@@ -7,7 +7,7 @@ var chatBox = document.getElementById("chatBox");
 var gameCanvas = document.getElementById("canvas");
 var favicon = document.getElementById('favicon');
 
-var urlRegexString = '(https?:\/\/(?:www\.|(?!www))[^\S\.]+\.[^\S\\\n]{2,}|www\.[^\S]+\.[^\S]{2,})';
+var urlRegexString = /(https?:\/\/(?:www\.|(?!www))[^\s\.]+\.[^\s\n]{2,}|www\.[^\s]+\.[^\s]{2,})/g;
 var urlRegex = new RegExp(urlRegexString);
 var newLineRegexString = '\n';
 var newLineRegex = new RegExp(newLineRegexString, 'g');
@@ -103,17 +103,21 @@ function recieveChatMsg(username, playerColor, msg, color, atPlayer) {
 	//url regex
 	var urlMatches = msg.match(urlRegex);
 	if(urlMatches) {
-		var url = urlMatches[0];
-		if(url.indexOf("http://") < 0 && url.indexOf("https://") < 0) {
-			url = "http://" + url;
-		}
-		var matchInd = msg.indexOf(urlMatches[0]);
-		var hyperlinkOpen = "<a href=\"" + url + "\" target=\"_blank\">";
-		var hyperlinkClose = "</a>";
+		console.log(urlMatches.length);
+		for(var i = 0; i < urlMatches.length; i++) {
+			console.log(urlMatches[i]);
+			var url = urlMatches[i];
+			if(url.indexOf("http://") < 0 && url.indexOf("https://") < 0) {
+				url = "http://" + url;
+			}
+			var matchInd = msg.indexOf(urlMatches[i]);
+			var hyperlinkOpen = "<a href=\"" + url + "\" target=\"_blank\">";
+			var hyperlinkClose = "</a>";
 
-		msg = msg.substr(0, matchInd) + hyperlinkOpen 
-		+ msg.substr(matchInd, urlMatches[0].length) + hyperlinkClose 
-		+ msg.substr(matchInd + urlMatches[0].length);
+			msg = msg.substr(0, matchInd) + hyperlinkOpen 
+			+ msg.substr(matchInd, urlMatches[i].length) + hyperlinkClose 
+			+ msg.substr(matchInd + urlMatches[i].length);
+		}
 	}
 
 	//new lines
