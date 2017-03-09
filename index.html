@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>wiznet</title>
+    <title>WIZ MUD</title>
     <link rel="stylesheet" href="TemplateData/style.css">
     <link id="favicon" rel="shortcut icon" href="TemplateData/favicon.ico" />
     <script src="TemplateData/UnityProgress.js"></script>
@@ -13,6 +13,13 @@
     <div class="wiz-mud">
       <div class="game-panel">
         <canvas class="emscripten" id="canvas" oncontextmenu="event.preventDefault()" style="height:100%; width:100%" bgcolor="#000000"></canvas>
+        <div id="loadingBg">
+          <div id="loadingBox">
+            <div id="bgBar"></div>
+            <div id="progressBar"></div>
+            <p id="loadingInfo">Loading...</p>
+          </div>
+        </div>
       </div>
       <div id="chatPanel" class="chat-panel" style="height:100%; width:40%">
         <div id="chatBox" class="chat-box">
@@ -27,10 +34,10 @@
     compatibilitycheck: null,
     backgroundColor: "#222C36",
     splashStyle: "Light",
-    dataUrl: "Release/WebGLBuild.data",
-    codeUrl: "Release/WebGLBuild.js",
-    asmUrl: "Release/WebGLBuild.asm.js",
-    memUrl: "Release/WebGLBuild.mem",
+    dataUrl: "Release/WebGLBuild2.data",
+    codeUrl: "Release/WebGLBuild2.js",
+    asmUrl: "Release/WebGLBuild2.asm.js",
+    memUrl: "Release/WebGLBuild2.mem",
   };
 </script>
 <script src="Release/UnityLoader.js"></script>

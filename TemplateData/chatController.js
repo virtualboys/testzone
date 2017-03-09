@@ -103,9 +103,7 @@ function recieveChatMsg(username, playerColor, msg, color, atPlayer) {
 	//url regex
 	var urlMatches = msg.match(urlRegex);
 	if(urlMatches) {
-		console.log(urlMatches.length);
 		for(var i = 0; i < urlMatches.length; i++) {
-			console.log(urlMatches[i]);
 			var url = urlMatches[i];
 			if(url.indexOf("http://") < 0 && url.indexOf("https://") < 0) {
 				url = "http://" + url;
