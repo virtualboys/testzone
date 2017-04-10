@@ -171,19 +171,19 @@ chatInput.onkeydown = function(event) {
 		return false; 
 	//left
 	} else if (event.keyCode == 37) {
-		SendMessage(m_username, 'RotateLeftStart');
+		SendMessage('GameCamera', 'RotateLeftStart');
 		return false; 
 	//right
 	} else if (event.keyCode == 39) {
-		SendMessage(m_username, 'RotateRightStart');
+		SendMessage('GameCamera', 'RotateRightStart');
 		return false; 
 	//up
 	} else if (event.keyCode == 38) {
-		SendMessage(m_username, 'RotateUpStart');
+		SendMessage('GameCamera', 'RotateUpStart');
 		return false; 
 	//down
 	} else if (event.keyCode == 40) {
-		SendMessage(m_username, 'RotateDownStart');
+		SendMessage('GameCamera', 'RotateDownStart');
 		return false; 
 	}
 };
@@ -191,19 +191,19 @@ chatInput.onkeydown = function(event) {
 chatInput.onkeyup = function(event) {
 	//left
 	if (event.keyCode == 37) {
-		SendMessage(m_username, 'RotateLeftStop');
+		SendMessage('GameCamera', 'RotateLeftStop');
 		return false; 
 	//right
 	} else if (event.keyCode == 39) {
-		SendMessage(m_username, 'RotateRightStop');
+		SendMessage('GameCamera', 'RotateRightStop');
 		return false; 
 	//up
 	} else if (event.keyCode == 38) {
-		SendMessage(m_username, 'RotateUpStop');
+		SendMessage('GameCamera', 'RotateUpStop');
 		return false; 
 	//down
 	} else if (event.keyCode == 40) {
-		SendMessage(m_username, 'RotateDownStop');
+		SendMessage('GameCamera', 'RotateDownStop');
 		return false; 
 	}
 };
